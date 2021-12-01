@@ -11,18 +11,9 @@ namespace wizardNinjaSamurai
         protected int health;
         public int Health
         {
-            get {return health;}
+            get{return health;}
+            set{health = value;}
         }
-
-        public Human(string name)
-        {
-            Name = name;
-            Strength = 3;
-            Intelligence = 3;
-            Dexterity = 3;
-            health = 100;
-        }
-
         public Human(string name, int str, int intel, int dex, int hp)
         {
             Name = name;
@@ -33,12 +24,24 @@ namespace wizardNinjaSamurai
         }
         public virtual void Attack(Human targ)
         {
-            System.Console.WriteLine($"Enemy {targ.Name} : [{targ.health}]");
-            int dmg = Strength*5;
-            targ.health -= dmg;
-            System.Console.WriteLine($"{Name} dealt {dmg} to Enemy {targ.Name} !");
-            System.Console.WriteLine($"Enemy {targ.Name} : [{targ.health}]");
         }
+
+        // public virtual void Attack(Human target, int dmg)
+        // {
+        //     if (target.health < dmg){
+        //         target.health = 0;
+        //     }
+        //     else
+        //     {
+        //         target.health -= dmg;
+        //     }
+        // }
+
+        // public int Healed(Human target, int hp)
+        // {
+        //     target.health += hp;
+        //     return target.health;
+        // }
     }
 
 }

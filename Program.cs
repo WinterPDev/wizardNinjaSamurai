@@ -6,9 +6,18 @@ namespace wizardNinjaSamurai
     {
         static void Main(string[] args)
         {
-
             Wizard wiz = new Wizard("Eluith");
-            System.Console.WriteLine(wiz.Name + " " + wiz.Intelligence + " " + wiz.Health + " " + wiz.Strength);
+            Wizard wiz2 = new Wizard("Athairne");
+            Ninja nin = new Ninja("Honzo");
+            Samurai sam = new Samurai("Takeda");
+
+            wiz.Attack(wiz2);
+            wiz.Heal(wiz2);
+            nin.Attack(wiz);
+            nin.Steal(wiz);
+            sam.Attack(wiz);
+            sam.Attack(nin);
+            sam.Meditate();
         }
     }
 }
